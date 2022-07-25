@@ -10,7 +10,7 @@ const Nav = (props) => {
       <div>
       <Link to="/">Home</Link>
       <Link to="notepads">Notepad</Link>
-      <Link to="new">Add Boat</Link>
+      <Link to="tasks">Tasks</Link>
       </div>
     </nav>
   )

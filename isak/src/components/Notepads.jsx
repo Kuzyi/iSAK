@@ -4,21 +4,16 @@ import { useNavigate } from 'react-router-dom'
 
 const Notepads = (props) => {
 
-  let navigate = useNavigate()
-
-  const showBoat = (boat) => {
-    navigate(`${boat.id}`)
-  }
+  // let navigate = useNavigate()
 
 
   return (
     <div>
-    <div className="boat-grid">
+    <div className="grid">
       {
-      props.boats.map((boat) => (
-        <div className="boat-card" onClick={() => showBoat(boat)} key={boat.id}>
-          <img style={{ display: 'block' }} src={boat.img} alt={boat.name} />
-          <h3>{boat.name}</h3>
+      props.note.map((note) => (
+        <div className="card" key={note.id}>
+          <h3>{note.noteTitle}</h3>
         </div>
       ))}
     </div>

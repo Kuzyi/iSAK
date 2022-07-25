@@ -6,7 +6,7 @@ div {
   background-size: cover;
 }
 
-.detail, .detail-header, .listings, .home, .home div, .boat-card, .navbar {
+.detail, .detail-header, .listings, .home, .home div, .card, .navbar {
   display: flex;
 }
 
@@ -16,7 +16,7 @@ div {
   flex-wrap: wrap;
 }
 
-.detail, .boat-card, .home div {
+.detail, .card, .home div {
   flex-direction: column;
 }
 
@@ -55,13 +55,13 @@ h1, h2, h3, h4 {
   margin-left: 0.5em;
 }
 
-.boat-grid {
+.grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
 }
 
-.boat-card {
+.card {
   padding: 1em;
   width: 18em;
   height: 15em;
@@ -75,11 +75,11 @@ h1, h2, h3, h4 {
   cursor: pointer;
 }
 
-.boat-card:hover {
+.card:hover {
   transform: scale(1.01);
 }
 
-.boat-card img {
+.card img {
   width: 100%;
   height: 10em;
   object-fit: center;
