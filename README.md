@@ -15,6 +15,7 @@ iSAK is intended to be a continually growing tool set. If you have a feature ide
 iSAK wants to continue to be a free and easy access tool for your internet needs.
 
 **_## Current Tools_**
+
 Here are the iSAK current tools.
 
 - Notepad - name and record your notes
@@ -22,6 +23,7 @@ Here are the iSAK current tools.
 - Task List - Simple Task list
 
 **_## Getting Started_**
+
 Link to Trello to see progress on project
 https://trello.com/b/SIPutUDe/isak
 
@@ -44,9 +46,11 @@ Link to Heroku deployment of app. (TO COME)
 - [] Stop Watch
 
 **_## Add Your Own Feature_**
+
 As iSAK is a new project, we are waiting to have a basic layout and interface before allowing users to create their own tools. Please be patient.
 
-**\_## Contact Info**
+**_## Contact Info_**
+
 Alec Kuzma
 https://www.linkedin.com/in/alec-kuzma/
 
