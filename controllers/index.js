@@ -1,11 +1,11 @@
-const Plant = require('../models/plant')
+const Task = require('../models/tasks')
 
-const createPlant = async (req, res) => {
+const createTask = async (req, res) => {
   try {
-    const plant = await new Plant(req.body)
-    await plant.save()
+    const task = await new Task(req.body)
+    await task.save()
     return res.status(201).json({
-      plant
+      task
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -13,5 +13,5 @@ const createPlant = async (req, res) => {
 }
 
 module.exports = {
-  createPlant
+  createTask
 }
