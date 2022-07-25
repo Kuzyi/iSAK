@@ -1,0 +1,24 @@
+{
+  "name": "isak",
+  "version": "1.0.0",
+  "description": "## Date: 07/24/2022",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kuzyi/iSAK.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Kuzyi/iSAK/issues"
+  },
+  "homepage": "https://github.com/Kuzyi/iSAK#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "mongoose": "^6.4.6"
+  }
+}
