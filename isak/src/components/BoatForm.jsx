@@ -5,7 +5,7 @@ const BoatForm = (props) => {
 
   const handleSubmit = (e) => {
     props.addBoat(e)
-    navigate('/listings')
+    navigate('/notepads')
   }
 
 

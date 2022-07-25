@@ -12,6 +12,7 @@ const Notepads = (props) => {
 
 
   return (
+    <div>
     <div className="boat-grid">
       {
       props.boats.map((boat) => (
@@ -20,6 +21,7 @@ const Notepads = (props) => {
           <h3>{boat.name}</h3>
         </div>
       ))}
+    </div>
     </div>
     
   )

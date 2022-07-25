@@ -44,16 +44,18 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="notepads" element={<Notepads boats={boats} />} />
-          <Route path="/notepads/:id" element={<BoatDetails boats={boats} />} />
           <Route
-            path="new"
+            path="notepads"
             element={
-              <BoatForm
-                newBoat={newBoat}
-                handleChange={handleChange}
-                addBoat={addBoat}
-              />
+              <div>
+                {' '}
+                <BoatForm
+                  newBoat={newBoat}
+                  handleChange={handleChange}
+                  addBoat={addBoat}
+                />
+                <Notepads boats={boats} />{' '}
+              </div>
             }
           />
         </Routes>
