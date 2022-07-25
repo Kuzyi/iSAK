@@ -2,7 +2,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 
-const Listings = (props) => {
+const Notepads = (props) => {
 
   let navigate = useNavigate()
 
@@ -25,4 +25,4 @@ const Listings = (props) => {
   )
 }
 
-export default Listings
+export default Notepads

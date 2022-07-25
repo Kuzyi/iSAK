@@ -4,7 +4,7 @@ import './styles/App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Nav from './components/Nav'
-import Listings from './components/Listings'
+import Notepads from './components/Notepads'
 import BoatDetails from './components/BoatDetails'
 import BoatForm from './components/BoatForm'
 
@@ -44,8 +44,8 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="listings" element={<Listings boats={boats} />} />
-          <Route path="/listings/:id" element={<BoatDetails boats={boats} />} />
+          <Route path="notepads" element={<Notepads boats={boats} />} />
+          <Route path="/notepads/:id" element={<BoatDetails boats={boats} />} />
           <Route
             path="new"
             element={
