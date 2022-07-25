@@ -1,8 +1,8 @@
-const Notes = require('../models/notes')
+const Tasks = require('../models/tasks')
 
 const getAllTasks = async (req, res) => {
   try {
-    const items = await Notes.find()
+    const items = await Tasks.find()
     return res.status(200).json({ items })
   } catch (error) {
     return res.status(500).send(error.message)
@@ -11,7 +11,7 @@ const getAllTasks = async (req, res) => {
 
 const createNewTask = async (req, res) => {
   try {
-    const item = await new Notes(req.body)
+    const item = await new Tasks(req.body)
     await item.save()
     return res.status(201).json({
       item
