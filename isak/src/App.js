@@ -1,39 +1,58 @@
 import { useState } from 'react'
-import boatsArray from './data/boats'
 import './styles/App.css'
 import { Routes, Route } from 'react-router-dom'
 import Home from './components/Home'
 import Nav from './components/Nav'
-import Listings from './components/Listings'
-import BoatDetails from './components/BoatDetails'
-import BoatForm from './components/BoatForm'
+import Notepads from './components/Notepads'
+import Tasks from './components/Tasks'
+import NoteForm from './components/NoteForm'
+import TaskForm from './components/TaskForm'
 
 const App = () => {
   // The boatsArray is passed into state as the initial state for 'boats' in App.js
-  const [boats, setBoats] = useState(boatsArray)
-  const [newBoat, setNewBoat] = useState({
-    id: '',
-    name: '',
-    img: '',
-    description: '',
-    price: ''
+  const [task, setTasks] = useState([])
+  const [newTask, setNewTask] = useState({
+    id: '0',
+    taskName: '',
+    status: ''
   })
 
-  const addBoat = (e) => {
+  const [note, setNote] = useState([])
+  const [newNote, setNewNote] = useState({
+    id: '0',
+    noteTitle: '',
+    noteString: ''
+  })
+
+  const addNote = (e) => {
     e.preventDefault()
-    const currentBoats = boats
-    const createdBoat = {
-      ...newBoat,
-      id: parseInt(boats.length + 1),
-      price: parseInt(newBoat.price)
+    const currentNotes = note
+    const createdNote = {
+      ...newNote,
+      id: parseInt(note.length + 1)
     }
-    currentBoats.push(createdBoat)
-    setBoats(currentBoats)
-    setNewBoat({ id: '', name: '', img: '', description: '', price: '' })
+    currentNotes.push(createdNote)
+    setNote(currentNotes)
+    setNewNote({ id: '', taskName: '', status: '' })
   }
 
-  const handleChange = (e) => {
-    setNewBoat({ ...newBoat, [e.target.name]: e.target.value })
+  const addTask = (e) => {
+    e.preventDefault()
+    const currentTasks = task
+    const createdTask = {
+      ...newTask,
+      id: parseInt(task.length + 1)
+    }
+    currentTasks.push(createdTask)
+    setTasks(currentTasks)
+    setNewNote({ id: '', noteTitle: '', noteString: '' })
+  }
+
+  const handleChangeNote = (e) => {
+    setNewNote({ ...newNote, [e.target.name]: e.target.value })
+  }
+  const handleChangeTask = (e) => {
+    setNewTask({ ...newTask, [e.target.name]: e.target.value })
   }
 
   return (
@@ -44,16 +63,32 @@ const App = () => {
       <main>
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="listings" element={<Listings boats={boats} />} />
-          <Route path="/listings/:id" element={<BoatDetails boats={boats} />} />
           <Route
-            path="new"
+            path="notepads"
             element={
-              <BoatForm
-                newBoat={newBoat}
-                handleChange={handleChange}
-                addBoat={addBoat}
-              />
+              <div>
+                {' '}
+                <NoteForm
+                  newNote={newNote}
+                  handleChangeNote={handleChangeNote}
+                  addNote={addNote}
+                />
+                <Notepads note={note} />{' '}
+              </div>
+            }
+          />
+          <Route
+            path="tasks"
+            element={
+              <div>
+                {' '}
+                <TaskForm
+                  newTask={newTask}
+                  handleChangeTask={handleChangeTask}
+                  addTask={addTask}
+                />
+                <Tasks task={task} />{' '}
+              </div>
             }
           />
         </Routes>
