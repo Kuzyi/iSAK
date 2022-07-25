@@ -1,11 +1,20 @@
-const Task = require('../models/tasks')
+const Notes = require('../models/notes')
 
-const createTask = async (req, res) => {
+const getAllTasks = async (req, res) => {
   try {
-    const task = await new Task(req.body)
-    await task.save()
+    const items = await Notes.find()
+    return res.status(200).json({ items })
+  } catch (error) {
+    return res.status(500).send(error.message)
+  }
+}
+
+const createNewTask = async (req, res) => {
+  try {
+    const item = await new Notes(req.body)
+    await item.save()
     return res.status(201).json({
-      task
+      item
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -13,5 +22,6 @@ const createTask = async (req, res) => {
 }
 
 module.exports = {
-  createTask
+  getAllTasks,
+  createNewTask
 }

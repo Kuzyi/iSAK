@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema
 
-const Note = new Schema(
+const Notes = new Schema(
   {
     noteTitle: { type: String, required: true },
     noteString: { type: Boolean, required: true }
@@ -9,4 +9,4 @@ const Note = new Schema(
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Note', Note)
+module.exports = mongoose.model('Note', Notes)
