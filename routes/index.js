@@ -10,4 +10,7 @@ router.get('/tasks', controllers.getAllTasks)
 
 router.post('/tasks', controllers.createNewTask)
 
+router.delete('/tasks/:id', controllers.deleteTask)
+app.put('/tasks/:id', updateTask)
+
 module.exports = router

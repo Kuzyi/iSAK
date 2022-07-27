@@ -4,7 +4,14 @@ import { useNavigate } from 'react-router-dom'
 
 const Tasks = (props) => {
 
-  // let navigate = useNavigate()
+  let navigate = useNavigate()
+
+  const handleDelete = async(e) => {
+    await props.deleteTask(e)
+    // .then(navigate('/tasks'))
+    document.location.reload()
+
+  }
 
 
   return (
@@ -15,6 +22,8 @@ const Tasks = (props) => {
         // onClick={() => showBoat(boat)} took out on click no showboat function
         <div className="card"  key={task.taskName}>
           <h3>{task.taskName}</h3>
+          <h4>{task._id}</h4>
+          <button value={task._id} onClick={handleDelete}>Delete Task</button>
         </div>
       ))}
     </div>
