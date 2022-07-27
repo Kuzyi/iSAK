@@ -4,9 +4,9 @@ const Schema = mongoose.Schema
 const Tasks = new Schema(
   {
     taskName: { type: String, required: true },
-    status: { type: Boolean, required: true }
+    status: { type: String, required: true }
   },
   { timestamps: true }
 )
 
-module.exports = mongoose.model('Tasks', Tasks)
+module.exports = mongoose.model('tasks', Tasks)
