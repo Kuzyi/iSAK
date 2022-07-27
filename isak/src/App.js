@@ -1,6 +1,7 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './styles/App.css'
 import { Routes, Route } from 'react-router-dom'
+import axios from 'axios'
 import Home from './components/Home'
 import Nav from './components/Nav'
 import Notepads from './components/Notepads'
@@ -12,7 +13,7 @@ const App = () => {
   // The boatsArray is passed into state as the initial state for 'boats' in App.js
   const [task, setTasks] = useState([])
   const [newTask, setNewTask] = useState({
-    id: '0',
+    // id: '0',
     taskName: '',
     status: ''
   })
@@ -24,28 +25,55 @@ const App = () => {
     noteString: ''
   })
 
-  const addNote = (e) => {
-    e.preventDefault()
-    const currentNotes = note
-    const createdNote = {
-      ...newNote,
-      id: parseInt(note.length + 1)
+  useEffect(() => {
+    async function getTasks() {
+      const taskList = await axios.get(`http://localhost:3001/tasks`)
+      setTasks(taskList.data.tasks)
+      console.log(taskList)
     }
-    currentNotes.push(createdNote)
-    setNote(currentNotes)
-    setNewNote({ id: '', taskName: '', status: '' })
+    getTasks()
+  }, [])
+
+  const addNote = () => {
+    console.log('hey')
   }
 
-  const addTask = (e) => {
-    e.preventDefault()
-    const currentTasks = task
-    const createdTask = {
-      ...newTask,
-      id: parseInt(task.length + 1)
-    }
-    currentTasks.push(createdTask)
-    setTasks(currentTasks)
-    setNewNote({ id: '', noteTitle: '', noteString: '' })
+  // const addNote = (e) => {
+  //   e.preventDefault()
+  //   const currentNotes = note
+  //   const createdNote = {
+  //     ...newNote,
+  //     id: parseInt(note.length + 1)
+  //   }
+  //   currentNotes.push(createdNote)
+  //   setNote(currentNotes)
+  //   setNewNote({ id: '', taskName: '', status: '' })
+  // }
+
+  // const addTask = (e) => {
+  //   e.preventDefault()
+  //   const currentTasks = task
+  //   const createdTask = {
+  //     ...newTask,
+  //     id: parseInt(task.length + 1)
+  //   }
+  //   currentTasks.push(createdTask)
+  //   setTasks(currentTasks)
+  //   setNewNote({ id: '', noteTitle: '', noteString: '' })
+  //   console.log(task)
+  // }
+
+  const addTask = async (e) => {
+    console.log(newTask)
+    let res = await axios
+      .post('http://localhost:3001/tasks', newTask)
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    console.log(res)
   }
 
   const handleChangeNote = (e) => {
@@ -53,6 +81,7 @@ const App = () => {
   }
   const handleChangeTask = (e) => {
     setNewTask({ ...newTask, [e.target.name]: e.target.value })
+    console.log(newTask)
   }
 
   return (
