@@ -21,7 +21,7 @@ const handleSubmit = (e) => {
     <h4>Update Task</h4>
     <form onSubmit={ handleSubmit }>
       <input type="text" value={props.currentUpdateTask.updateTaskName} onChange={ props.handleChangeUpdateTask} name={'updateTaskName'} placeholder={'Update Task'} />
-      <input type="text" value={props.currentUpdateTask.updateStatus} onChange={ props.handleChangeTaskUpdateTask} name={'updateStatus'} placeholder={'Update Status'} />
+      <input type="text" value={props.currentUpdateTask.updateStatus} onChange={ props.handleChangeUpdateTask} name={'updateStatus'} placeholder={'Update Status'} />
       <button>Submit Update</button>
     </form>
     </div>

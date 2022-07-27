@@ -32,8 +32,8 @@ const Tasks = (props) => {
   }
 
   const handleChangeUpdateTask = (e) => {
-    // setCurrentUpdateTask({ ...currentUpdate, [e.target.name]: e.target.value })
-    // console.log(currentUpdate)
+    setCurrentUpdateTask({ ...currentUpdateTask, [e.target.name]: e.target.value })
+    console.log(currentUpdateTask)
   }
 
 
