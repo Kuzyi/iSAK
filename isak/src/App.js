@@ -15,7 +15,8 @@ const App = () => {
   const [newTask, setNewTask] = useState({
     // id: '0',
     taskName: '',
-    status: ''
+    status: '',
+    component: 0
   })
 
   const [note, setNote] = useState([])
