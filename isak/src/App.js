@@ -35,7 +35,7 @@ const App = () => {
   }, [])
 
   const addNote = () => {
-    console.log('hey')
+    console.log('still need to wire')
   }
 
   // const addNote = (e) => {
@@ -67,6 +67,25 @@ const App = () => {
     console.log(newTask)
     let res = await axios
       .post('http://localhost:3001/tasks', newTask)
+      .then(function (response) {
+        console.log(response)
+      })
+      .catch(function (error) {
+        console.log(error)
+      })
+    console.log(res)
+  }
+
+  // const deleteTask = () => {
+  //   console.log('we are trying :)')
+  // }
+
+  const deleteTask = async (e) => {
+    e.preventDefault()
+    console.log(e.target.value)
+    let deleteId = e.target.value
+    let res = await axios
+      .delete(`http://localhost:3001/tasks/${deleteId}`)
       .then(function (response) {
         console.log(response)
       })
@@ -116,7 +135,7 @@ const App = () => {
                   handleChangeTask={handleChangeTask}
                   addTask={addTask}
                 />
-                <Tasks task={task} />{' '}
+                <Tasks task={task} deleteTask={deleteTask} />{' '}
               </div>
             }
           />
