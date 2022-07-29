@@ -15,12 +15,13 @@ const TaskForm = (props) => {
   const newTask = props.newTask
 
   return (
-    <div>
+    <div id="myDIV" class="header">
     <h1>Add A New Task</h1>
     <form onSubmit={ handleSubmit }>
       <input type="text" value={newTask.taskName} onChange={ props.handleChangeTask} name={'taskName'} placeholder={'Enter Task'} />
-      <input type="text" value={newTask.status} onChange={ props.handleChangeTask} name={'status'} placeholder={'Complete?'} />
-      <button>Submit</button>
+      <h3>Complete Box</h3>
+      <input type="checkbox" value={newTask.status} onChange={ props.handleChangeTaskStatus} name={'status'} placeholder={'Complete?'} />
+      <button class="addBtn">Submit</button>
     </form>
     </div>
   );
