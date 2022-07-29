@@ -5,6 +5,7 @@ const Tasks = new Schema(
   {
     taskName: { type: String, required: true },
     status: { type: String, required: true }
+    // componentIndex: { type: Number, required: true }
   },
   { timestamps: true }
 )

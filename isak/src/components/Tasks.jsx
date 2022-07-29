@@ -1,10 +1,13 @@
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
+import Task from '../components/Task'
+
 
 
 
 const Tasks = (props) => {
 
-  let navigate = useNavigate()
+
 
   const handleDelete = async(e) => {
     await props.deleteTask(e)
@@ -14,17 +17,21 @@ const Tasks = (props) => {
   }
 
 
+
+
+
+
+
+
+
+
+  
   return (
     <div>
     <div className="grid">
       {
-      props.task.map((task) => (
-        // onClick={() => showBoat(boat)} took out on click no showboat function
-        <div className="card"  key={task.taskName}>
-          <h3>{task.taskName}</h3>
-          <h4>{task._id}</h4>
-          <button value={task._id} onClick={handleDelete}>Delete Task</button>
-        </div>
+      props.task.map((task, index) => (
+        <Task task={task} handleDelete={handleDelete}/>
       ))}
     </div>
     
