@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom'
 import axios from 'axios'
 import Home from './components/Home'
 import Nav from './components/Nav'
-import Notepads from './components/Notepads'
+import Notes from './components/Notes'
 import Tasks from './components/Tasks'
 import NoteForm from './components/NoteForm'
 import TaskForm from './components/TaskForm'
@@ -34,7 +34,7 @@ const App = () => {
   useEffect(() => {
     async function getNotes() {
       const noteList = await axios.get(`http://localhost:3001/notes`)
-      setTasks(taskList.data.notes)
+      setNotes(noteList.data.notes)
       console.log(noteList)
     }
     getNotes()
@@ -121,7 +121,7 @@ const App = () => {
                   handleChangeNote={handleChangeNote}
                   addNote={addNote}
                 />
-                <Notepads note={note} deleteNote={deleteNote} />{' '}
+                <Notes note={note} deleteNote={deleteNote} />{' '}
               </div>
             }
           />
