@@ -22,7 +22,7 @@ console.log(props.note._id)
     <h4>Update Note</h4>
     <form  onSubmit={ handleSubmit }>
       <input type="text" value={props.currentUpdateNote.noteTitle} onChange={ props.handleChangeUpdateNote} name={'noteTitle'} placeholder={'Update Note Title'} />
-      <input type="text" value={props.currentUpdateTask.noteString} onChange={ props.handleChangeUpdateNote} name={'noteString'} placeholder={'Update Note'} />
+      <input type="text" value={props.currentUpdateNote.noteString} onChange={ props.handleChangeUpdateNote} name={'noteString'} placeholder={'Update Note'} />
       <button value={props.note._id} onClick={ handleSubmit }>Submit Update</button>
       
     </form>

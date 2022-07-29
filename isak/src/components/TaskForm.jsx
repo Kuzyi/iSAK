@@ -5,7 +5,7 @@ const TaskForm = (props) => {
 
   const handleSubmit = (e) => {
     props.addTask(e)
-    navigate('/tasks')
+    document.location.reload()
   }
 
 

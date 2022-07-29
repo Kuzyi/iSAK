@@ -12,7 +12,7 @@ const UpdateTaskForm= (props) => {
 
 const handleSubmit = (e) => {
   props.updateTask(e)
-  // document.location.reload()
+  document.location.reload()
 }
 
 console.log(props.task._id)

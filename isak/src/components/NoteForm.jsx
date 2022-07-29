@@ -5,7 +5,7 @@ const NoteForm = (props) => {
 
   const handleSubmit = (e) => {
     props.addNote(e)
-    navigate('/notes')
+    document.location.reload()
   }
 
 
