@@ -19,7 +19,11 @@ const NoteForm = (props) => {
     <h1>Add A New Note</h1>
     <form onSubmit={ handleSubmit }>
       <input type="text" value={newNote.noteTitle} onChange={ props.handleChangeNote} name={'noteTitle'} placeholder={'Enter Note Title'} />
-      <input type="text" value={newNote.noteString} onChange={ props.handleChangeNote} name={'noteString'} placeholder={'Enter Note'} />
+      {/* <input class="noteString" type="text" value={newNote.noteString} onChange={ props.handleChangeNote} name={'noteString'} placeholder={'Enter Note'} /> */}
+      <textarea rows="20" cols="50" class="noteString" type="text" value={newNote.noteString} onChange={ props.handleChangeNote} name={'noteString'} placeholder={'Enter Note'}>
+Test
+</textarea>
+
       <button>Submit</button>
     </form>
     </div>

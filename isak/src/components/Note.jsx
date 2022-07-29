@@ -61,7 +61,7 @@ const Note = (props) => {
   return(
 <div className="card">
           <h3>{props.note.noteTitle}</h3>
-          <h4>{props.note._id}</h4>
+          <p>{props.note.noteString}</p>
           <button value={props.note._id} onClick={props.handleDelete} >Delete Note</button>
           {component}
         </div>
