@@ -13,11 +13,11 @@ router.post('/tasks', controllers.createNewTask)
 router.delete('/tasks/:id', controllers.deleteTask)
 router.put('/tasks/:id', controllers.updateTask)
 
-router.get('/notes', controllers.getAllTasks)
+router.get('/notes', controllers.getAllNotes)
 
-router.post('/notes', controllers.createNewTask)
+router.post('/notes', controllers.createNewNote)
 
-router.delete('/notes/:id', controllers.deleteTask)
-router.put('/notes/:id', controllers.updateTask)
+router.delete('/notes/:id', controllers.deleteNote)
+router.put('/notes/:id', controllers.updateNote)
 
 module.exports = router

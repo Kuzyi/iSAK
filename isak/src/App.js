@@ -26,7 +26,7 @@ const App = () => {
     async function getTasks() {
       const taskList = await axios.get(`http://localhost:3001/tasks`)
       setTasks(taskList.data.tasks)
-      console.log(taskList)
+      // console.log(taskList)
     }
     getTasks()
   }, [])

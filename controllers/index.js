@@ -1,4 +1,5 @@
 const Tasks = require('../models/tasks')
+const Notes = require('../models/notes')
 
 const getAllTasks = async (req, res) => {
   try {
@@ -48,8 +49,8 @@ const updateTask = async (req, res) => {
 
 const getAllNotes = async (req, res) => {
   try {
-    const tasks = await Tasks.find()
-    return res.status(200).json({ tasks })
+    const notes = await Notes.find()
+    return res.status(200).json({ notes })
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -57,10 +58,10 @@ const getAllNotes = async (req, res) => {
 
 const createNewNote = async (req, res) => {
   try {
-    const task = await new Tasks(req.body)
-    await task.save()
+    const note = await new Notes(req.body)
+    await note.save()
     return res.status(201).json({
-      task
+      note
     })
   } catch (error) {
     return res.status(500).json({ error: error.message })
@@ -70,11 +71,11 @@ const createNewNote = async (req, res) => {
 const deleteNote = async (req, res) => {
   try {
     const { id } = req.params
-    const deletedTask = await Tasks.findByIdAndDelete(id)
-    if (deletedTask) {
-      return res.status(200).send('Task deleted')
+    const deletedNote = await Notes.findByIdAndDelete(id)
+    if (deletedNote) {
+      return res.status(200).send('Note deleted')
     }
-    throw new Error('Task not found')
+    throw new Error('Note not found')
   } catch (error) {
     return res.status(500).send(error.message)
   }
@@ -83,10 +84,10 @@ const deleteNote = async (req, res) => {
 const updateNote = async (req, res) => {
   try {
     const { id } = req.params
-    const updatedTask = await Tasks.findByIdAndUpdate(id, req.body, {
+    const updatedNote = await Notes.findByIdAndUpdate(id, req.body, {
       new: true
     })
-    res.status(200).json(updatedTask)
+    res.status(200).json(updatedNote)
   } catch (error) {
     return res.status(500).send(error.message)
   }
