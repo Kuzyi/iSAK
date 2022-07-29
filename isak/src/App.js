@@ -13,7 +13,7 @@ const App = () => {
   const [task, setTasks] = useState([])
   const [newTask, setNewTask] = useState({
     taskName: '',
-    status: ''
+    status: false
   })
 
   const [note, setNotes] = useState([])
@@ -103,6 +103,10 @@ const App = () => {
     setNewTask({ ...newTask, [e.target.name]: e.target.value })
   }
 
+  const handleChangeTaskStatus = (e) => {
+    setNewTask({ status: true })
+  }
+
   return (
     <div className="App">
       <header>
@@ -133,6 +137,7 @@ const App = () => {
                 <TaskForm
                   newTask={newTask}
                   handleChangeTask={handleChangeTask}
+                  handleChangeTaskStatus={handleChangeTaskStatus}
                   addTask={addTask}
                 />
                 <Tasks task={task} deleteTask={deleteTask} />{' '}

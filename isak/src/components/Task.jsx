@@ -25,6 +25,10 @@ const Task = (props) => {
     // console.log(currentUpdateTask)
   }
 
+  const handleChangeUpdateTaskStatus = (e) => {
+    setCurrentUpdateTask({status: true })
+  }
+
 
 
   const updateTask = async (e) => {
@@ -51,7 +55,7 @@ const Task = (props) => {
 
   else if(currentComponent ===1) {
     component = <UpdateTaskForm  goBackComponent = {goBackComponent} task={props.task} loadUpdateComponent = {loadUpdateComponent}
-    handleChangeUpdateTask={handleChangeUpdateTask} updateTask={updateTask} currentUpdateTask={currentUpdateTask} />
+    handleChangeUpdateTask={handleChangeUpdateTask} handleChangeUpdateTaskStatus={handleChangeUpdateTaskStatus} updateTask={updateTask} currentUpdateTask={currentUpdateTask} />
   }
 
 
@@ -59,9 +63,9 @@ const Task = (props) => {
 
 
   return(
-<div className="card">
-          <h3>{props.task.taskName}</h3>
-          <h4>{props.task._id}</h4>
+<div >
+  <li>{props.task.taskName}</li>
+          {/* <h4>{props.task._id}</h4> */}
           <button value={props.task._id} onClick={props.handleDelete} >Delete Task</button>
           {component}
         </div>

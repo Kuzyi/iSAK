@@ -28,11 +28,14 @@ const Tasks = (props) => {
   
   return (
     <div>
-    <div className="grid">
+      {/* className="grid" */}
+    <div class="taskContainer" >
+      <ul id="myUL">
       {
       props.task.map((task, index) => (
         <Task task={task} handleDelete={handleDelete}/>
       ))}
+      </ul>
     </div>
     
     </div>

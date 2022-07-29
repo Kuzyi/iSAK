@@ -19,10 +19,11 @@ console.log(props.task._id)
 
   return(
     <div>
-    <h4>Update Task</h4>
+    <h4>Update Task and Check if Complete</h4>
     <form  onSubmit={ handleSubmit }>
       <input type="text" value={props.currentUpdateTask.taskName} onChange={ props.handleChangeUpdateTask} name={'taskName'} placeholder={'Update Task'} />
-      <input type="text" value={props.currentUpdateTask.status} onChange={ props.handleChangeUpdateTask} name={'status'} placeholder={'Update Status'} />
+      
+      <input type="checkbox" value={props.currentUpdateTask.status} onChange={ props.handleChangeUpdateTaskStatus} name={'status'} placeholder={'Update Status'} />
       <button value={props.task._id} onClick={ handleSubmit }>Submit Update</button>
       
     </form>
