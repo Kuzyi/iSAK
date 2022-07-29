@@ -36,7 +36,8 @@ const deleteTask = async (req, res) => {
 
 const updateTask = async (req, res) => {
   try {
-    const updatedTask = await Tasks.findByIdAndUpdate(req.params.id, req.body, {
+    const { id } = req.params
+    const updatedTask = await Tasks.findByIdAndUpdate(id, req.body, {
       new: true
     })
     res.status(200).json(updatedTask)

@@ -8,8 +8,7 @@ const main = async () => {
   const exampleTask = [
     {
       taskName: 'Example Task',
-      status: 'completed',
-      component: 0
+      status: 'completed'
     }
   ]
 

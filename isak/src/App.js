@@ -15,9 +15,19 @@ const App = () => {
   const [newTask, setNewTask] = useState({
     // id: '0',
     taskName: '',
-    status: '',
-    component: 0
+    status: ''
   })
+
+  const [selectedTask, setSelectedTask] = useState({})
+
+  // const setIndex = (e) => {
+  //   setTasks(prevState => ({
+  //     itemList: prevState.itemList.map(
+  //     obj => (obj._id === 1234 ? Object.assign(obj, { description: "New Description" }) : obj)
+  //   )
+  // }));
+
+  // }
 
   const [note, setNote] = useState([])
   const [newNote, setNewNote] = useState({
@@ -65,7 +75,11 @@ const App = () => {
   // }
 
   const addTask = async (e) => {
-    console.log(newTask)
+    e.preventDefault()
+    // const createdTask = {
+    //   ...newTask,
+    //   id: parseInt(note.length + 1)
+    // }
     let res = await axios
       .post('http://localhost:3001/tasks', newTask)
       .then(function (response) {
@@ -76,10 +90,6 @@ const App = () => {
       })
     console.log(res)
   }
-
-  // const deleteTask = () => {
-  //   console.log('we are trying :)')
-  // }
 
   const deleteTask = async (e) => {
     e.preventDefault()

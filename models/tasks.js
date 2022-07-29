@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 const Tasks = new Schema(
   {
     taskName: { type: String, required: true },
-    status: { type: String, required: true },
-    component: { type: Number, required: true }
+    status: { type: String, required: true }
+    // componentIndex: { type: Number, required: true }
   },
   { timestamps: true }
 )
