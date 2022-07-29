@@ -20,10 +20,14 @@ console.log(props.note._id)
   return(
     <div>
     <h4>Update Note</h4>
-    <form  onSubmit={ handleSubmit }>
+    <form class="card" onSubmit={ handleSubmit }>
       <input type="text" value={props.currentUpdateNote.noteTitle} onChange={ props.handleChangeUpdateNote} name={'noteTitle'} placeholder={'Update Note Title'} />
-      <input type="text" value={props.currentUpdateNote.noteString} onChange={ props.handleChangeUpdateNote} name={'noteString'} placeholder={'Update Note'} />
+      <textarea rows="20" class="noteString" cols="50" type="text" value={props.currentUpdateNote.noteString} onChange={ props.handleChangeUpdateNote} name={'noteString'} placeholder={"enter update here"}>
+Test
+</textarea>
+      {/* <input type="text" value={props.currentUpdateNote.noteString} onChange={ props.handleChangeUpdateNote} name={'noteString'} placeholder={'Update Note'} /> */}
       <button value={props.note._id} onClick={ handleSubmit }>Submit Update</button>
+      <button onClick={ props.goBackComponent}>Do not update</button>
       
     </form>
     
